@@ -22,14 +22,18 @@ set_option('precision', 3)
 description = data.describe()
 print(description)
 
-# class distribution
+# class distribution (how balanced the class values are)
 class_counts = data.groupby('class').size()
 print(class_counts)
 
-#pairwise pearson correlations
+# correlations (using Pearson's correlation coefficient)
+# using corr() function on Pandas dataframe
 correlations = data.corr(method='pearson')
 print(correlations)
 
 # skew (refers to a distribution that is assumed Gaussian that is shifted or squashed in one direction or another)
+# an input attribute has a skew may allow you to perform data preparation to correct
+# the skew and later improve the accuracy of the models.
+# calculated using skew() function Pandas 
 skew = data.skew()
 print(skew)
